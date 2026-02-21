@@ -14,31 +14,45 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/eye.svg
+  String get eye => 'assets/icons/eye.svg';
+
   /// File path: assets/icons/logo 2.svg
   String get logo2 => 'assets/icons/logo 2.svg';
 
   /// List of all assets
-  List<String> get values => [logo2];
+  List<String> get values => [eye, logo2];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Successmark.png
-  AssetGenImage get successmark =>
-      const AssetGenImage('assets/images/Successmark.png');
+  /// File path: assets/images/background_image.png
+  AssetGenImage get backgroundImage =>
+      const AssetGenImage('assets/images/background_image.png');
 
-  /// File path: assets/images/alif-caesar-rizqi-pratama-loUlSOXL81c-unsplash 1.png
-  AssetGenImage get alifCaesarRizqiPratamaLoUlSOXL81cUnsplash1 =>
-      const AssetGenImage(
-        'assets/images/alif-caesar-rizqi-pratama-loUlSOXL81c-unsplash 1.png',
-      );
+  /// File path: assets/images/logo 2.png
+  AssetGenImage get logo2 => const AssetGenImage('assets/images/logo 2.png');
+
+  /// File path: assets/images/logo_android12.png
+  AssetGenImage get logoAndroid12 =>
+      const AssetGenImage('assets/images/logo_android12.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-    successmark,
-    alifCaesarRizqiPratamaLoUlSOXL81cUnsplash1,
-  ];
+  List<AssetGenImage> get values => [backgroundImage, logo2, logoAndroid12];
+}
+
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/ar.json
+  String get ar => 'assets/translations/ar.json';
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// List of all assets
+  List<String> get values => [ar, en];
 }
 
 class Assets {
@@ -46,6 +60,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {
