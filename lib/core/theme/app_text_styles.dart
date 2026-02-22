@@ -1,10 +1,12 @@
-import 'package:bookia_app/core/theme/app_colors.dart';
 import 'package:flutter/widgets.dart';
 
 class AppTextStyles {
-  static TextStyle regular30 = TextStyle(
-    fontSize: 30,
+  static TextStyle text20Regular = TextStyle(
+    fontSize: 20,
     fontWeight: FontWeight.w400,
-    color: AppColors.black,
+  );
+  static TextStyle text15Regular = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
   );
 }
