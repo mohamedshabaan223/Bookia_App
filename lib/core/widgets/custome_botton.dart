@@ -6,29 +6,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomeBotton extends StatelessWidget {
   final String label;
   final Color? backgroundColor;
-  const CustomeBotton({super.key, required this.label, this.backgroundColor});
+  final void Function()? onTap;
+  const CustomeBotton({super.key, required this.label, this.backgroundColor, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 331.w,
-      height: 56.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: backgroundColor ?? AppColors.primaryColor,
-        border: Border.all(
-          color: backgroundColor == AppColors.white
-              ? AppColors.black
-              : AppColors.primaryColor,
+    return InkWell(
+      onTap: onTap ,
+      child: Container(
+        width: 331.w,
+        height: 56.h,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: backgroundColor ?? AppColors.primaryColor,
+          border: Border.all(
+            color: backgroundColor == AppColors.white
+                ? AppColors.black
+                : AppColors.primaryColor,
+          ),
+          borderRadius: BorderRadius.circular(8.r),
         ),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: Text(
-        label,
-        style: AppTextStyles.text15Regular.copyWith(
-          color: backgroundColor == AppColors.white
-              ? AppColors.black
-              : AppColors.white,
+        child: Text(
+          label,
+          style: AppTextStyles.text15Regular.copyWith(
+            color: backgroundColor == AppColors.white
+                ? AppColors.black
+                : AppColors.white,
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+
 import 'package:bookia_app/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,8 @@ class BookiaApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
-        theme: ThemeData(fontFamily: 'DMSerifDisplay'),
+        theme: ThemeData(fontFamily: 'DMSerifDisplay', 
+        ),
         home: OnboardingScreen(),
       ),
     );
