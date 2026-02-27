@@ -1,16 +1,15 @@
+import 'package:bookia_app/core/extension/app_extension.dart';
 import 'package:bookia_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomArrowBack extends StatelessWidget {
-  const CustomArrowBack({super.key});
+  const CustomArrowBack({super.key,});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.pop(context);
-      },
+      onTap:()=> context.pop(),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.gray2),

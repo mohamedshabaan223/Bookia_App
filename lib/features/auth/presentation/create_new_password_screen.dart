@@ -1,17 +1,16 @@
 import 'package:bookia_app/core/theme/app_text_styles.dart';
 import 'package:bookia_app/core/widgets/custom_arrow_back.dart';
-import 'package:bookia_app/core/widgets/custom_row_ask_have_account.dart';
 import 'package:bookia_app/core/widgets/custom_text_form_field.dart';
 import 'package:bookia_app/core/widgets/custome_botton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class CreateNewPasswordScreen extends StatelessWidget {
+  const CreateNewPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: SafeArea(child: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 22.0.w),
         child: Column(
@@ -19,17 +18,18 @@ class ForgetPassword extends StatelessWidget {
           children: [
             CustomArrowBack(),
             SizedBox(height: 30.h,),
-            Text('Forgot Password?' , style: AppTextStyles.text30Regular,),
+            Text('Create new password' , style: AppTextStyles.text30Regular,),
            SizedBox(height: 10.h,),
-            Text('Donot worry! It occurs. Please enter the email address linked with your account. ', style: AppTextStyles.text16Regular,),
+            Text('Your new password must be unique from those previously used.', style: AppTextStyles.text16Regular,),
             SizedBox(height: 30.h,),
-            CustomTextFormFiled(hintText: 'Enter your email'  , 
-            keyboardType: TextInputType.emailAddress,),
+            CustomTextFormFiled(hintText: 'New Password' , 
+            keyboardType: TextInputType.visiblePassword, ),
+             SizedBox(height: 15.h,),
+            CustomTextFormFiled(hintText: 'Confirm Password' , 
+            keyboardType: TextInputType.visiblePassword, ),
             SizedBox(height: 38.h,),
-            CustomeBotton(label: 'Send Code'),
-            Spacer(),
-            CustomRowAskHaveAccount(labelOne: 'Didn’t received code?', labelTwo: ' Resend'),
-            SizedBox(height: 29.h,),
+            CustomeBotton(label: 'Reset Password'),
+          
 
           ],
         ),

@@ -1,7 +1,8 @@
+import 'package:bookia_app/core/extension/app_extension.dart';
+import 'package:bookia_app/core/routing/routes.dart';
 import 'package:bookia_app/core/theme/app_colors.dart';
 import 'package:bookia_app/core/theme/app_text_styles.dart';
 import 'package:bookia_app/core/widgets/custome_botton.dart';
-import 'package:bookia_app/features/auth/presentation/login_screen.dart';
 import 'package:bookia_app/gen/assets.gen.dart';
 import 'package:bookia_app/gen/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -31,10 +32,12 @@ class OnboardingScreen extends StatelessWidget {
             Text(LocaleKeys.on_boarding.tr(), style: AppTextStyles.text20Regular),
             Spacer(),
             CustomeBotton(onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>LoginScreen()));
+              context.pushNamed(Routes.loginScreen);
             },label: LocaleKeys.login.tr()),
             SizedBox(height: 15.h),
-            CustomeBotton(label:LocaleKeys.register.tr(), backgroundColor: AppColors.white),
+            CustomeBotton(
+              onTap: () => context.pushNamed(Routes.registerScreen),
+              label:LocaleKeys.register.tr(), backgroundColor: AppColors.white),
             SizedBox(height: 94.h),
           ],
         ),
