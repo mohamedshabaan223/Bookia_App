@@ -10,30 +10,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
-  static Route onGenrateRoute(RouteSettings setting){
-    switch(setting.name){
+  static Route onGenrateRoute(RouteSettings setting) {
+    switch (setting.name) {
       case Routes.loginScreen:
-      return MaterialPageRoute(builder: (_)=> BlocProvider(
-        create: (context) => AuthCubit(),
-        child: LoginScreen()));
-       case Routes.registerScreen:
-      return MaterialPageRoute(builder: (_)=> RegisterScreen());
-       case Routes.forgetScreen:
-      return MaterialPageRoute(builder: (_)=> ForgetPasswordScreen());
-       case Routes.createPassowrdScreen:
-      return MaterialPageRoute(builder: (_)=> CreateNewPasswordScreen());
-       case Routes.onboardingScreen:
-      return MaterialPageRoute(builder: (_)=> OnboardingScreen());
-       case Routes.homeScreen:
-      return MaterialPageRoute(builder: (_)=> HomeScreen()); 
-      default : 
-      return MaterialPageRoute(builder: (_)=> Scaffold(
-        body: Center(
-          child: Text('NOT FOUND'),
-        ),
-      ));   
-  }
- 
-    
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => AuthCubit(),
+            child: LoginScreen(),
+          ),
+        );
+      case Routes.registerScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => AuthCubit(),
+            child: RegisterScreen(),
+          ),
+        );
+      case Routes.forgetScreen:
+        return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+      case Routes.createPassowrdScreen:
+        return MaterialPageRoute(builder: (_) => CreateNewPasswordScreen());
+      case Routes.onboardingScreen:
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) => HomeScreen());
+      default:
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(body: Center(child: Text('NOT FOUND'))),
+        );
+    }
   }
 }

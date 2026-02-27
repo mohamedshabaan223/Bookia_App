@@ -19,6 +19,30 @@ class AuthRepo {
      return false;
    }
   }
+
+
+  static Future<bool> register({ required String name , required String email ,  required String password ,  required String confirmPassword }) async{
+   try {
+      Response response = await _dio.post("https://codingarabic.online/api/register" , 
+    data: {
+      "name" : name,
+    "email" :email,
+    "password":password,
+    "password_confirmation" :confirmPassword,
+    });
+
+    if (response.statusCode == 201) {
+       await saveData(response.data["data"]["token"].toString());
+      return true;
+    }else {
+      return false;
+
+    }
+   } catch (e) {
+     return false;
+   }
+
+  }
   static saveData( String token) async{
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   await prefs.setString('token', token);
