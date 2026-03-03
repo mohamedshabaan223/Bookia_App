@@ -14,18 +14,38 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/boo_kmark.svg
+  String get booKmark => 'assets/icons/boo_kmark.svg';
+
+  /// File path: assets/icons/cart.svg
+  String get cart => 'assets/icons/cart.svg';
+
   /// File path: assets/icons/eye.svg
   String get eye => 'assets/icons/eye.svg';
+
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
 
   /// File path: assets/icons/logo 2.svg
   String get logo2 => 'assets/icons/logo 2.svg';
 
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
   /// List of all assets
-  List<String> get values => [eye, logo2];
+  List<String> get values => [booKmark, cart, eye, home, logo2, profile];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/Successmark.png
+  AssetGenImage get successmark =>
+      const AssetGenImage('assets/images/Successmark.png');
+
+  /// File path: assets/images/android12logo.png
+  AssetGenImage get android12logo =>
+      const AssetGenImage('assets/images/android12logo.png');
 
   /// File path: assets/images/background_image.png
   AssetGenImage get backgroundImage =>
@@ -34,12 +54,13 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo 2.png
   AssetGenImage get logo2 => const AssetGenImage('assets/images/logo 2.png');
 
-  /// File path: assets/images/logo_android12.png
-  AssetGenImage get logoAndroid12 =>
-      const AssetGenImage('assets/images/logo_android12.png');
-
   /// List of all assets
-  List<AssetGenImage> get values => [backgroundImage, logo2, logoAndroid12];
+  List<AssetGenImage> get values => [
+    successmark,
+    android12logo,
+    backgroundImage,
+    logo2,
+  ];
 }
 
 class $AssetsTranslationsGen {
