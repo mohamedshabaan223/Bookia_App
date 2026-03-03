@@ -4,7 +4,9 @@ class Routes {
   static const String onboardingScreen = '/onboardingScreen';
   static const String forgetScreen = '/forgetScreen';
   static const String createPassowrdScreen = '/createPassowrdScreen';
-    static const String homeScreen = '/homeScreen';
+  static const String homeScreen = '/homeScreen';
+  static const String bottonNavBarScreen = '/bottonNavBarScreen';
+
 
   
 }

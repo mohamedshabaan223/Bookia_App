@@ -32,8 +32,19 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
 
+  /// File path: assets/icons/search-normal.svg
+  String get searchNormal => 'assets/icons/search-normal.svg';
+
   /// List of all assets
-  List<String> get values => [booKmark, cart, eye, home, logo2, profile];
+  List<String> get values => [
+    booKmark,
+    cart,
+    eye,
+    home,
+    logo2,
+    profile,
+    searchNormal,
+  ];
 }
 
 class $AssetsImagesGen {

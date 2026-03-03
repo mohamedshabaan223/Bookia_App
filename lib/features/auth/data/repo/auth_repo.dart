@@ -31,8 +31,7 @@ class AuthRepo {
     "password_confirmation" :confirmPassword,
     });
 
-    if (response.statusCode == 201) {
-       await saveData(response.data["data"]["token"].toString());
+    if (response.statusCode == 20) {
       return true;
     }else {
       return false;

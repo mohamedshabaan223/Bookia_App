@@ -4,6 +4,7 @@ import 'package:bookia_app/features/auth/presentation/create_new_password_screen
 import 'package:bookia_app/features/auth/presentation/forget_password_screen.dart';
 import 'package:bookia_app/features/auth/presentation/login_screen.dart';
 import 'package:bookia_app/features/auth/presentation/register_screen.dart';
+import 'package:bookia_app/features/botton_nav_bar/presentation/botton_nav_bar_screen.dart';
 import 'package:bookia_app/features/home/presentation/home_screen.dart';
 import 'package:bookia_app/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+        case Routes.bottonNavBarScreen:
+        return MaterialPageRoute(builder: (_) => BottonNavBarScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(body: Center(child: Text('NOT FOUND'))),

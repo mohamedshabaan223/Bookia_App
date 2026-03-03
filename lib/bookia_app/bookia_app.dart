@@ -31,7 +31,7 @@ class BookiaApp extends StatelessWidget {
   if (token == null) {
     return Routes.onboardingScreen;
   }else {
-    return Routes.homeScreen;
+    return Routes.bottonNavBarScreen;
   }
 }
 }
