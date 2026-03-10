@@ -10,6 +10,7 @@ class AppColors {
   static const Color gray3 = Color(0xffF7F8F9);
   static const Color white = Color(0xffFFFFFF);
   static const Color dotColor = Color(0xffD9D9D9);
+  static const Color backgroundBookItem= Color(0xFFF5EFE1);
 
 
 }

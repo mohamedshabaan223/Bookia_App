@@ -2,7 +2,7 @@ import 'package:bookia_app/core/theme/app_colors.dart';
 import 'package:bookia_app/features/auth/profile/presentation/profile_screen.dart';
 import 'package:bookia_app/features/book_mark/presentation/book_mark_screen.dart';
 import 'package:bookia_app/features/cart/presentation/cart_screen.dart';
-import 'package:bookia_app/features/home/cubit/cubit/sliders_cubit.dart';
+import 'package:bookia_app/features/home/cubit/cubit/home_cubit.dart';
 import 'package:bookia_app/features/home/presentation/home_screen.dart';
 import 'package:bookia_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class _BottonNavBarScreenState extends State<BottonNavBarScreen> {
   List<Widget> tabs = 
   [
     BlocProvider(
-      create: (context) => SlidersCubit()..slidersHome(),
+      create: (context) => HomeCubit()..init(),
       child: HomeScreen()),
     BookMarkScreen(),
     CartScreen(),

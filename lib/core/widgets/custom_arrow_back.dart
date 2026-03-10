@@ -1,4 +1,4 @@
-import 'package:bookia_app/core/extension/app_extension.dart';
+import 'package:bookia_app/core/helper/app_extension.dart';
 import 'package:bookia_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
