@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           BlocBuilder<HomeCubit, HomeState>(
+            buildWhen: (previous, current) => current is GeyBestSellerLoading || current is GeyBestSellerSuccess || current is GeyBestSellerError,
             builder: (context, state) {
              if (state is GeyBestSellerLoading){
               return CustomGridview();

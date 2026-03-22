@@ -20,4 +20,16 @@ final class GeyBestSellerSuccess extends HomeState {
   GeyBestSellerSuccess({required this.book});
 }
 final class GeyBestSellerError extends HomeState {}
+final class CartLoading extends HomeState {}
+final class CartSuccess extends HomeState {
+  final String message;
+
+  CartSuccess({required this.message});
+}
+final class CartError extends HomeState {
+  final String errorMessage;
+
+  CartError({required this.errorMessage});
+}
+
 

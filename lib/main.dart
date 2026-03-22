@@ -1,5 +1,6 @@
 import 'package:bookia_app/bookia_app/bookia_app.dart';
 import 'package:bookia_app/core/helper/bloc_observer.dart';
+import 'package:bookia_app/core/networking/api_constant.dart';
 import 'package:bookia_app/core/networking/dio_factory.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,13 @@ void main() async {
  
 
   WidgetsFlutterBinding.ensureInitialized();
-   DioFactory.init();
+   
     Bloc.observer = MyBlocObserver();
    final SharedPreferences prefs = await SharedPreferences.getInstance();
    String? token = prefs.getString('token');
+   ApiConstant.token = token;
+   debugPrint(token);
+   DioFactory.init();
   await Future.wait([
     EasyLocalization.ensureInitialized(),
     ScreenUtil.ensureScreenSize(),

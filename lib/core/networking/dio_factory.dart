@@ -11,7 +11,10 @@ static init(){
       baseUrl: ApiConstant.baseUrl,
       connectTimeout: Duration(
         seconds: 30
-      )
+      ),
+      headers: {
+        "Authorization" : 'Bearer ${ApiConstant.token}',
+      }
     )
   );
   dio?.interceptors.add(PrettyDioLogger(
