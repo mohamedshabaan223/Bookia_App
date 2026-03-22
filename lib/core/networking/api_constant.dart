@@ -4,4 +4,5 @@ class ApiConstant {
    static const String register = 'register';
    static const String bestSeller = 'products-bestseller';
    static const String sliders = 'sliders';
+   static const String productSearch = 'products-search';
 }

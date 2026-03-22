@@ -7,7 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookItem extends StatelessWidget {
   final Product? product;
-  const BookItem({super.key, required this.product});
+  final void Function()? onTap;
+  const BookItem({super.key, required this.product, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,18 @@ class BookItem extends StatelessWidget {
             Expanded(child: Text(product?.price ?? '' , style: AppTextStyles.text16Regular.copyWith(
               color: AppColors.black
             ),)),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 23.w , vertical: 4.h),
-              decoration: BoxDecoration(
-                color: AppColors.black,
-                borderRadius: BorderRadius.circular(4.r)
+            InkWell(
+              onTap: onTap,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 23.w , vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: AppColors.black,
+                  borderRadius: BorderRadius.circular(4.r)
+                ),
+                child: Text('Buy' , style: AppTextStyles.text14Regular.copyWith(
+                  color: AppColors.white
+                ),),
               ),
-              child: Text('Buy' , style: AppTextStyles.text14Regular.copyWith(
-                color: AppColors.white
-              ),),
             )
           ],
         )

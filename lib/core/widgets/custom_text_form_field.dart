@@ -9,11 +9,12 @@ class CustomTextFormFiled extends StatefulWidget {
   final String hintText;
    final bool isPassword;
   final TextInputType? keyboardType;
+  final void Function(String)? onChanged;
 
   final TextEditingController? controller;
 
 
-  const CustomTextFormFiled({super.key, required this.hintText, this.keyboardType, this.controller,  this.isPassword = false});
+  const CustomTextFormFiled({super.key, required this.hintText, this.keyboardType, this.controller,  this.isPassword = false, this.onChanged});
 
   @override
   State<CustomTextFormFiled> createState() => _CustomTextFormFiledState();
@@ -25,6 +26,7 @@ class _CustomTextFormFiledState extends State<CustomTextFormFiled> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onChanged,
       obscureText: widget.isPassword&&isObscure,
       cursorColor: AppColors.primaryColor,
       keyboardType: widget.keyboardType,
@@ -33,7 +35,6 @@ class _CustomTextFormFiledState extends State<CustomTextFormFiled> {
         FocusScope.of(context).unfocus();
       },
       decoration: InputDecoration(
-        
         filled: true,
         fillColor: AppColors.gray3,
         hintText: widget.hintText,
