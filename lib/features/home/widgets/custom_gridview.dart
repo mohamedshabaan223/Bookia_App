@@ -9,8 +9,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class CustomGridview extends StatelessWidget {
-  const CustomGridview({super.key, this.isLoading = true, this.books});
+  const CustomGridview({super.key, this.isLoading = true, this.books,});
   final bool isLoading;
+  
   final List<Product>? books;
 
   @override

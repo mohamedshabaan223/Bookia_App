@@ -1,6 +1,5 @@
 import 'package:bookia_app/core/theme/app_text_styles.dart';
 import 'package:bookia_app/features/home/cubit/cubit/home_cubit.dart';
-import 'package:bookia_app/features/home/widgets/book_item.dart';
 import 'package:bookia_app/features/home/widgets/custom_gridview.dart';
 import 'package:bookia_app/features/home/widgets/home_app_bar.dart';
 import 'package:bookia_app/features/home/widgets/sliders_home.dart';

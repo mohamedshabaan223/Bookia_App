@@ -14,6 +14,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/Bookmark.svg
+  String get bookmark => 'assets/icons/Bookmark.svg';
+
   /// File path: assets/icons/boo_kmark.svg
   String get booKmark => 'assets/icons/boo_kmark.svg';
 
@@ -37,6 +40,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<String> get values => [
+    bookmark,
     booKmark,
     cart,
     eye,

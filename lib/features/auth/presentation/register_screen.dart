@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     content: Text('Something is wrong'),
                     ));
                   } else {
-                    context.pushAndRemoveUntil(Routes.homeScreen, false);
+                    context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (Route<dynamic> route) { return false; }, );
                   }
                   
                 },
