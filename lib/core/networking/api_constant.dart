@@ -7,4 +7,9 @@ class ApiConstant {
    static const String sliders = 'sliders';
    static const String productSearch = 'products-search';
    static const String addToCart = 'add-to-cart';
+   static const String bookId = 'products';
+   static const String addWishlist = 'add-to-wishlist';
+   static const String showCart = 'cart';
+   static const String removeCart = 'remove-from-cart';
+   static const String showWishList= 'wishlist';
 }

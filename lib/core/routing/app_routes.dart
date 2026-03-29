@@ -4,6 +4,10 @@ import 'package:bookia_app/features/auth/presentation/create_new_password_screen
 import 'package:bookia_app/features/auth/presentation/forget_password_screen.dart';
 import 'package:bookia_app/features/auth/presentation/login_screen.dart';
 import 'package:bookia_app/features/auth/presentation/register_screen.dart';
+import 'package:bookia_app/features/book_details/cubit/cubit/book_details_cubit.dart';
+import 'package:bookia_app/features/book_details/presentation/book_details_screen.dart';
+import 'package:bookia_app/features/book_mark/cubit/cubit/wishlist_cubit.dart';
+import 'package:bookia_app/features/book_mark/presentation/book_mark_screen.dart';
 import 'package:bookia_app/features/botton_nav_bar/presentation/botton_nav_bar_screen.dart';
 import 'package:bookia_app/features/home/cubit/cubit/home_cubit.dart';
 import 'package:bookia_app/features/home/presentation/home_screen.dart';
@@ -32,18 +36,33 @@ class AppRoutes {
         );
       case Routes.forgetScreen:
         return MaterialPageRoute(builder: (_) => ForgetPasswordScreen());
+      case Routes.bookDetailsScreen:
+        int id = setting.arguments as int;
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => BookDetailsCubit()..bookDetails(id),
+            child: BookDetailScreen(),
+          ),
+        );
       case Routes.searchScreen:
         return MaterialPageRoute(
-          builder: (_) =>   MultiBlocProvider(
+          builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context)=> HomeCubit()),
-              BlocProvider(create: (context) => SearchCubit())
+              BlocProvider(create: (context) => HomeCubit()),
+              BlocProvider(create: (context) => SearchCubit()),
             ],
             child: SearchScreen(),
           ),
         );
       case Routes.createPassowrdScreen:
         return MaterialPageRoute(builder: (_) => CreateNewPasswordScreen());
+      case Routes.bookMarkScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => WishlistCubit(),
+            child: BookMarkScreen(),
+          ),
+        );
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.homeScreen:
