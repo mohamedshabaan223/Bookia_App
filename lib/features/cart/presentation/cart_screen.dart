@@ -15,10 +15,11 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<CartCubit, CartState>(
+      buildWhen: (previous, current) => current is ShowCartSuccess || current is ShowCartLoading ,
       listener: (context, state) {
-        if (state is RemoveCartLoading) {
+        if (state is RemoveCartLoading ) {
            showDialog(context: context, builder: (context)=> Center(child: CircularProgressIndicator(),));
-        }else if (state is RemoveCartSuccess){
+        }else if (state is RemoveCartSuccess ){
           context.pop();
            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.green,
@@ -29,7 +30,7 @@ class CartScreen extends StatelessWidget {
         if (state is ShowCartLoading  
       ) {
          return Center(child: CircularProgressIndicator());
-        }else if (state is ShowCartSuccess){
+        }else if (state is ShowCartSuccess  ){
           return CustomScrollView(
             slivers:[
               SliverToBoxAdapter(child:  Column(
@@ -49,7 +50,7 @@ class CartScreen extends StatelessWidget {
                     Divider(indent: 14.w, endIndent: 14.w, height: 20.h),
                 itemBuilder: (context, index) => CartCard(cart: state.cartItem![index],
                 onTap: () => context.read<CartCubit>().removeCart(state.cartItem![index].itemId),),
-                itemCount: state.cartItem!.length,
+                itemCount: state.cartItem?.length ?? 0,
                 
               ),
               SliverToBoxAdapter(child: Column(
@@ -66,7 +67,7 @@ class CartScreen extends StatelessWidget {
             ]
           );
         } else {
-          return Center(child: Text("Error"));
+          return Center(child: Text('Error'));
         }
       },
     );

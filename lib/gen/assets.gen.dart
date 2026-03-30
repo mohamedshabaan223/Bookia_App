@@ -23,8 +23,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cart.svg
   String get cart => 'assets/icons/cart.svg';
 
+  /// File path: assets/icons/cib_apple.svg
+  String get cibApple => 'assets/icons/cib_apple.svg';
+
   /// File path: assets/icons/eye.svg
   String get eye => 'assets/icons/eye.svg';
+
+  /// File path: assets/icons/google_ic.svg
+  String get googleIc => 'assets/icons/google_ic.svg';
 
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
@@ -43,7 +49,9 @@ class $AssetsIconsGen {
     bookmark,
     booKmark,
     cart,
+    cibApple,
     eye,
+    googleIc,
     home,
     logo2,
     profile,

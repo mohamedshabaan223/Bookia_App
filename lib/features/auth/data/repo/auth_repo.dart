@@ -1,16 +1,17 @@
-import 'package:dio/dio.dart';
+import 'package:bookia_app/core/networking/api_constant.dart';
+import 'package:bookia_app/core/networking/dio_factory.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 class AuthRepo {
-  static final  Dio _dio = Dio();
+
   static Future<bool> login({ required String email , required String password}) async {
    try {
-     Response response = await _dio.post("https://codingarabic.online/api/login" ,
-      data:{
+     final response = await DioFactory.dio?.post(ApiConstant.login , data:{
         "email" : email,
          "password":password,
-      } );
-    if (response.statusCode == 200) {
-     await saveData(response.data["data"]["token"].toString());
+      });
+    if (response?.statusCode == 200) {
+     await saveData(response!.data["data"]["token"].toString());
       return true;
     }else {
       return false;
@@ -23,15 +24,16 @@ class AuthRepo {
 
   static Future<bool> register({ required String name , required String email ,  required String password ,  required String confirmPassword }) async{
    try {
-      Response response = await _dio.post("https://codingarabic.online/api/register" , 
-    data: {
-      "name" : name,
+      final response = await DioFactory.dio?.post(ApiConstant.register ,  data: {
+    "name" : name,
     "email" :email,
     "password":password,
     "password_confirmation" :confirmPassword,
     });
+   
 
-    if (response.statusCode == 20) {
+    if (response?.statusCode == 20) {
+      await saveData(response!.data["data"]["token"].toString());
       return true;
     }else {
       return false;

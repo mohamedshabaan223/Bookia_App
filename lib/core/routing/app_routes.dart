@@ -4,6 +4,7 @@ import 'package:bookia_app/features/auth/presentation/create_new_password_screen
 import 'package:bookia_app/features/auth/presentation/forget_password_screen.dart';
 import 'package:bookia_app/features/auth/presentation/login_screen.dart';
 import 'package:bookia_app/features/auth/presentation/register_screen.dart';
+import 'package:bookia_app/features/auth/presentation/verification_screen.dart';
 import 'package:bookia_app/features/book_details/cubit/cubit/book_details_cubit.dart';
 import 'package:bookia_app/features/book_details/presentation/book_details_screen.dart';
 import 'package:bookia_app/features/book_mark/cubit/cubit/wishlist_cubit.dart';
@@ -39,10 +40,12 @@ class AppRoutes {
       case Routes.bookDetailsScreen:
         int id = setting.arguments as int;
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => BookDetailsCubit()..bookDetails(id),
-            child: BookDetailScreen(),
-          ),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => BookDetailsCubit()..bookDetails(id)),
+              BlocProvider(create: (context) => HomeCubit())
+            ],
+            child: BookDetailScreen()),
         );
       case Routes.searchScreen:
         return MaterialPageRoute(
@@ -65,6 +68,8 @@ class AppRoutes {
         );
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
+        case Routes.verificationOtp:
+        return MaterialPageRoute(builder: (_) => VerificationScreen());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.bottonNavBarScreen:

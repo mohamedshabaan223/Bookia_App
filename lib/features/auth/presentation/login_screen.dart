@@ -7,6 +7,9 @@ import 'package:bookia_app/core/widgets/custom_row_ask_have_account.dart';
 import 'package:bookia_app/core/widgets/custom_text_form_fiELd.dart';
 import 'package:bookia_app/core/widgets/custome_botton.dart';
 import 'package:bookia_app/features/auth/cubit/cubit/auth_cubit.dart';
+import 'package:bookia_app/features/auth/presentation/widgets/custom_or_divider.dart';
+import 'package:bookia_app/features/auth/presentation/widgets/custom_sign_google_apple.dart';
+import 'package:bookia_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,6 +97,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   label: 'Login'),
               ),
+              SizedBox(height: 34.h,),
+              CustomOrDivider(),
+              SizedBox(height: 21.h,),
+              CustomSignGoogleApple(imageUrl: Assets.icons.googleIc, label: 'Sign in with Google'),
+              SizedBox(height:15.h ,),
+              CustomSignGoogleApple(imageUrl: Assets.icons.cibApple, label: 'Sign in with Apple'),
+
               Spacer(),
               CustomRowAskHaveAccount(
                 labelOne: 'Don’t have an account?',
