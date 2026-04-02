@@ -12,4 +12,6 @@ class Routes {
   static const String bookDetailsScreen = '/bookDetailsScreen';
   static const String bookMarkScreen = '/bookMarkScreen';
    static const String congrates = '/congrates';
+   static const String editProfile = '/editProfile';
+   static const String resetPassword = '/resetPassword';
 }

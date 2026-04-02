@@ -15,4 +15,7 @@ class ApiConstant {
    static const String removeWishlist = 'remove-from-wishlist';
    static const String placeOrder = 'place-order';
    static const String governorate = 'governorates';
+   static const String showProfile = 'profile';
+   static const String updateProfile='update-profile';
+   static const String changePassword='update-password';
 }

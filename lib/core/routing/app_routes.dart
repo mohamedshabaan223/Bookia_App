@@ -5,6 +5,9 @@ import 'package:bookia_app/features/auth/presentation/forget_password_screen.dar
 import 'package:bookia_app/features/auth/presentation/login_screen.dart';
 import 'package:bookia_app/features/auth/presentation/register_screen.dart';
 import 'package:bookia_app/features/auth/presentation/verification_screen.dart';
+import 'package:bookia_app/features/auth/profile/cubit/cubit/profile_cubit.dart';
+import 'package:bookia_app/features/auth/profile/presentation/edit_profile.dart';
+import 'package:bookia_app/features/auth/profile/presentation/reset_password.dart';
 import 'package:bookia_app/features/book_details/cubit/cubit/book_details_cubit.dart';
 import 'package:bookia_app/features/book_details/presentation/book_details_screen.dart';
 import 'package:bookia_app/features/book_mark/cubit/cubit/wishlist_cubit.dart';
@@ -85,8 +88,17 @@ class AppRoutes {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
-        case Routes.congrates:
+      case Routes.congrates:
         return MaterialPageRoute(builder: (_) => Congrates());
+      case Routes.editProfile:
+        return MaterialPageRoute(builder: (_) => EditProfile());
+      case Routes.resetPassword:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => ProfileCubit(),
+            child: ResetPassword(),
+          ),
+        );
       case Routes.bottonNavBarScreen:
         return MaterialPageRoute(builder: (_) => BottonNavBarScreen());
       default:

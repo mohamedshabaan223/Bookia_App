@@ -17,6 +17,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Bookmark.svg
   String get bookmark => 'assets/icons/Bookmark.svg';
 
+  /// File path: assets/icons/Frame 15.svg
+  String get frame15 => 'assets/icons/Frame 15.svg';
+
+  /// File path: assets/icons/Group 6.svg
+  String get group6 => 'assets/icons/Group 6.svg';
+
   /// File path: assets/icons/Successmark.svg
   String get successmark => 'assets/icons/Successmark.svg';
 
@@ -50,6 +56,8 @@ class $AssetsIconsGen {
   /// List of all assets
   List<String> get values => [
     bookmark,
+    frame15,
+    group6,
     successmark,
     booKmark,
     cart,
