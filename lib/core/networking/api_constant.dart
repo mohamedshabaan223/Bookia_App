@@ -12,4 +12,7 @@ class ApiConstant {
    static const String showCart = 'cart';
    static const String removeCart = 'remove-from-cart';
    static const String showWishList= 'wishlist';
+   static const String removeWishlist = 'remove-from-wishlist';
+   static const String placeOrder = 'place-order';
+   static const String governorate = 'governorates';
 }

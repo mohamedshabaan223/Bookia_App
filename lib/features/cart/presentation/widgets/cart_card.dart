@@ -13,6 +13,7 @@ class CartCard extends StatefulWidget {
   final CartItemModel cart;
   final void Function()? onTap;
   
+  
 
   @override
   State<CartCard> createState() => _CartCardState();

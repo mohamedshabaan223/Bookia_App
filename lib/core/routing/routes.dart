@@ -2,8 +2,8 @@ class Routes {
   static const String loginScreen = '/loginScreen';
   static const String registerScreen = '/registerScreen';
   static const String onboardingScreen = '/onboardingScreen';
-    static const String verificationOtp = '/verificationOtp';
-
+  static const String verificationOtp = '/verificationOtp';
+  static const String placeOrder = '/placeOrder';
   static const String forgetScreen = '/forgetScreen';
   static const String createPassowrdScreen = '/createPassowrdScreen';
   static const String homeScreen = '/homeScreen';
@@ -11,4 +11,5 @@ class Routes {
   static const String searchScreen = '/searchScreen';
   static const String bookDetailsScreen = '/bookDetailsScreen';
   static const String bookMarkScreen = '/bookMarkScreen';
+   static const String congrates = '/congrates';
 }

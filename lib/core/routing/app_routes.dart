@@ -13,6 +13,9 @@ import 'package:bookia_app/features/botton_nav_bar/presentation/botton_nav_bar_s
 import 'package:bookia_app/features/home/cubit/cubit/home_cubit.dart';
 import 'package:bookia_app/features/home/presentation/home_screen.dart';
 import 'package:bookia_app/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:bookia_app/features/place_order/cubit/cubit/governorate_cubit.dart';
+import 'package:bookia_app/features/place_order/presentation/congrates.dart';
+import 'package:bookia_app/features/place_order/presentation/place_order.dart';
 import 'package:bookia_app/features/search/cubit/cubit/search_cubit.dart';
 import 'package:bookia_app/features/search/presentation/search_screen.dart';
 import 'package:flutter/material.dart';
@@ -42,10 +45,13 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (_) => MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => BookDetailsCubit()..bookDetails(id)),
-              BlocProvider(create: (context) => HomeCubit())
+              BlocProvider(
+                create: (context) => BookDetailsCubit()..bookDetails(id),
+              ),
+              BlocProvider(create: (context) => HomeCubit()),
             ],
-            child: BookDetailScreen()),
+            child: BookDetailScreen(),
+          ),
         );
       case Routes.searchScreen:
         return MaterialPageRoute(
@@ -68,10 +74,19 @@ class AppRoutes {
         );
       case Routes.onboardingScreen:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
-        case Routes.verificationOtp:
+      case Routes.verificationOtp:
         return MaterialPageRoute(builder: (_) => VerificationScreen());
+      case Routes.placeOrder:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => GovernorateCubit()..showGovernorate(),
+            child: PlaceOrder(),
+          ),
+        );
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+        case Routes.congrates:
+        return MaterialPageRoute(builder: (_) => Congrates());
       case Routes.bottonNavBarScreen:
         return MaterialPageRoute(builder: (_) => BottonNavBarScreen());
       default:

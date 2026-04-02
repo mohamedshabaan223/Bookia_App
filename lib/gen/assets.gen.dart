@@ -17,6 +17,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Bookmark.svg
   String get bookmark => 'assets/icons/Bookmark.svg';
 
+  /// File path: assets/icons/Successmark.svg
+  String get successmark => 'assets/icons/Successmark.svg';
+
   /// File path: assets/icons/boo_kmark.svg
   String get booKmark => 'assets/icons/boo_kmark.svg';
 
@@ -47,6 +50,7 @@ class $AssetsIconsGen {
   /// List of all assets
   List<String> get values => [
     bookmark,
+    successmark,
     booKmark,
     cart,
     cibApple,
@@ -62,10 +66,6 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Successmark.png
-  AssetGenImage get successmark =>
-      const AssetGenImage('assets/images/Successmark.png');
-
   /// File path: assets/images/android12logo.png
   AssetGenImage get android12logo =>
       const AssetGenImage('assets/images/android12logo.png');
@@ -78,12 +78,7 @@ class $AssetsImagesGen {
   AssetGenImage get logo2 => const AssetGenImage('assets/images/logo 2.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-    successmark,
-    android12logo,
-    backgroundImage,
-    logo2,
-  ];
+  List<AssetGenImage> get values => [android12logo, backgroundImage, logo2];
 }
 
 class $AssetsTranslationsGen {

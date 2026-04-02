@@ -19,5 +19,15 @@ Future<void> showWishlist()async{
     emit(ShowWishlistError());
   }
 }
+Future<void> removeWishlist( int productId) async{
+  emit(RemoveWishlistLoading());
+  final response = await WishlistRepo.removeWishlist(productId);
+  if (response is String) {
+    emit(RemoveWishlistSuccess(message: response));
+  }
+  else{
+    emit(RemoveEishlistError());
+  }
+}
   
 }

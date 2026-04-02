@@ -29,4 +29,22 @@ class WishlistRepo {
      return null;
    }
   }
+  
+static  removeWishlist ( int productId)async{
+  try {
+    final response = await DioFactory.dio?.post(ApiConstant.removeWishlist , data: {
+    'product_id':productId,
+    });
+    if (response?.statusCode== 200) {
+      return response?.data['message'];
+    }else {
+      return response?.data['message'];
+    }
+  } catch (e) {
+    return e.toString();
+  }
+}
+
+
+
 }

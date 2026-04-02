@@ -1,18 +1,21 @@
 
+import 'package:bookia_app/features/book_mark/cubit/cubit/wishlist_cubit.dart';
 import 'package:bookia_app/features/book_mark/data/models/show_wishlist_model.dart';
 import 'package:bookia_app/features/book_mark/presentation/widgets/book_wishlist_item.dart';
 
 import 'package:bookia_app/features/home/data/models/books_model.dart';
 import 'package:bookia_app/features/home/widgets/book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class GridShowlist extends StatelessWidget {
-  const GridShowlist({super.key, this.isLoading = true, this.wishproduct,});
+  const GridShowlist({super.key, this.isLoading = true, this.wishproduct, });
   final bool isLoading;
   final List<WishlistItem>? wishproduct;
+
   
 
   @override
@@ -46,6 +49,7 @@ class GridShowlist extends StatelessWidget {
           ),
           itemCount: wishproduct?.length ?? 0,
           itemBuilder: (context, index) => BookWishlistItem(
+            onTap: ()=> context.read<WishlistCubit>().removeWishlist(wishproduct![index].id) ,
             productwishlist:wishproduct![index] ,
           )
         );
